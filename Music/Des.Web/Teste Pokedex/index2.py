@@ -1,0 +1,16 @@
+import pypokedex
+
+# Get Pokémon data
+pokemon = pypokedex.get(dex=727)
+
+# Open the file in append mode and write Pokémon details to it
+with open("demofile2.html", "a") as f:
+    f.write(f"Name: {pokemon.name}\n")
+    f.write(f"Types: {', '.join(pokemon.types)}\n")
+    f.write(f"Base Stats: {pokemon.base_stats}\n")
+    f.write(f"Sprites: {pokemon.sprites}\n")
+    f.write("\n")  # Add a newline for better readability
+
+# Open the file in read mode and print its content
+with open("demofile2.html", "r") as f:
+    print(f.read())
